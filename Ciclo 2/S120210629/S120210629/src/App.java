@@ -1,4 +1,4 @@
-/* Para crear un nuevo archivo vamos a HELP --> WELCOME --> LEARN --> FIND AND RUN ALL COMANDS
+/* Para crear un nuevo archivo básico vamos a HELP --> WELCOME --> LEARN --> FIND AND RUN ALL COMANDS
 --> JAVA CREATE JAVA PROJECTS --> NO BUILD TOOLS --> CREO UNA CARPETA EN WINDOWS CON "Y" -->
 DOY EL MISMO NOMBRE AL ARCHIVO "Y" --> LISTO
 */
@@ -131,9 +131,22 @@ public class App {
         System.out.println("El triple del " + entero + " es " + (entero*3)); //Impresión triple
         System.out.println(numeroRespuesta(entero)); //Impresión total en STR
 
-        //Ejercicio 5
+    //Ejercicio 5
         var mc = new Scanner(System.in);
-        System.out.println("Ingrese un número ");
+        System.out.println("Ingrese un número entero: ");
+        var val_ip = mc.nextInt();
+
+        var resultado_ip = validarNumero(val_ip);
+        System.out.println(resultado_ip);
+
+    //Ejercicio 6 - Métodos de STRING
+        var oc = new Scanner(System.in);
+        System.out.println("Ingrese una palabra aquí");
+        var longpal = oc.nextLine();
+
+        var evapal = longpal.length();
+        System.out.println(evapal);
+
     }
 
     //Ejercicio 1
@@ -164,4 +177,9 @@ public class App {
     }
 
     //Ejercicio 5
+    public static String validarNumero(int val_ip){
+        return (val_ip % 2 == 0 ? val_ip + " Es par" : val_ip + " Es impar"); //? es un operador condicional similar a IF
+        //Si se cumple da la primera parte y sino se cumple va la segunta parte (:)
+        // return (val_ip % 2 != 0 ? val_ip + " Es impar" : val_ip + " Es par"); --> otra forma de decir lo mismo
+    }
 }
